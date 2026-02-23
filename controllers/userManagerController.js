@@ -71,10 +71,18 @@ class UserManageController {
         status,
       } = req.body;
 
+      const userAdminType = req.user.adminType;
+      console.log("Admin Type of Requesting User:", userAdminType);
+
       // 🔴 Basic validation
       if (!name || !email || !password) {
         return res.status(400).json({
           message: "Name, email and password are required",
+        });
+      }
+      if (userAdminType !== "owner") {
+        return res.status(400).json({
+          message: "you are not allowed to create admin users",
         });
       }
 

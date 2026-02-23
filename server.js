@@ -11,7 +11,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({origin: "http://localhost:3000",
+app.use(cors({origin: true,
   credentials: true}));
 app.use(express.json());
 const DATABASE_URL = process.env.DATABASE_URL;
