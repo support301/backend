@@ -12,11 +12,11 @@ const sendEmailVerificationOTP = async (req, user) => {
     await transporter.sendMail({
         from: process.env.EMAIL_FROM,
         to: user.email,
-        subject: "Pro Ace Academy --- Email Verification",
+        subject: "Arun Tgak --- Email Verification",
         html: `  <div style="font-family: Arial, sans-serif; line-height: 1.6;">
     <p>Hi ${user.name},</p>
 
-    <p>Welcome to <strong>Pro Ace Academy</strong> — we're excited to have you on board!</p>
+    <p>Welcome to <strong>Arun Tgak</strong> — we're excited to have you on board!</p>
 
     <p>Your one-time verification code (OTP) is:</p>
     <h2 style="color: #2c3e50;">${otp}</h2>
@@ -28,9 +28,9 @@ const sendEmailVerificationOTP = async (req, user) => {
 
 
     <p>If you need any assistance, feel free to reach out to our support team at 
-    <a href="mailto:support@proaceacademy.com">support@proaceacademy.com</a>.</p>
+    <a href="mailto:aruntgak22@gmail.com">aruntgak22@gmail.com</a>.</p>
 
-    <p>Best regards,<br/>The Pro Ace Academy Team</p>
+    <p>Best regards,<br/>The Arun Tgak Team</p>
   </div>`
     })
 

@@ -21,7 +21,6 @@ const trainerSchema = new mongoose.Schema(
 
         email: {
             type: String,
-            required: true,
             lowercase: true,
             unique: true,
         },
@@ -49,6 +48,11 @@ const trainerSchema = new mongoose.Schema(
             required: true,
         },
 
+        professionalExperience: {
+            type: Number,
+            min: 0,
+        },
+
         hourlyRate: {
             currency: {
                 type: String,
@@ -66,6 +70,12 @@ const trainerSchema = new mongoose.Schema(
 
         languages: {
             type: String,
+        },
+
+        quickSkills:{
+            type: String,
+            enum: ["IT", "SCHOOL CIRCULARS", "LANGUAGES", "DANCE", "MUSIC", "ARTS", "OTHERS", "HOBBY"],
+            default: "IT",
         },
 
         skills: {
